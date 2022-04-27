@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScreamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/screams', [ScreamController::class, 'index'])->name('screams');
+Route::get('/screams/create', [ScreamController::class, 'create'])->name('screams.create');
+Route::post('/screams/create', [ScreamController::class, 'store']);
+
 
 require __DIR__.'/auth.php';
