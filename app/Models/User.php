@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function scream() {
         return $this->hasMany('App\Models\Scream');
     }
+
+    public function favorite() {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }

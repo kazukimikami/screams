@@ -25,6 +25,6 @@ Route::get('/dashboard', function () {
 Route::get('/', [ScreamController::class, 'index'])->name('screams');
 Route::get('/screams/create', [ScreamController::class, 'create'])->name('screams.create');
 Route::post('/screams/create', [ScreamController::class, 'store']);
-
+Route::post('/screams/favorite', [ScreamController::class, 'add_favorite'])->name('screams.favorite');
 
 require __DIR__.'/auth.php';

@@ -5,20 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Scream extends Model
+class Favorite extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'scream_text',
+        'scream_id',
         'created_at',
         'updated_at'
     ];
 
-    public function user() {
+    public function users() {
         return $this->belongsTo('App\Models\User');
     }
-    public function favorites() {
-        return $this->hasMany('App\Models\Favorite');
+
+    public function screams() {
+        return $this->belongsTo('App\Models\Scream');
     }
 }
