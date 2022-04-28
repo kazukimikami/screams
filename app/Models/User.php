@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scream() {
+        return $this->hasMany('App\Models\Scream');
+    }
+
+    public function favorite() {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }
