@@ -15,7 +15,7 @@
                         <dl style="display:flex;flex-direction:row;">
                           <dt style=""><img style="width:100px" src="https://www.shoshinsha-design.com/wp-content/uploads/2018/07/user_icon.png"></dt>
                           <dd style="width:100%;padding:10px;">
-                            <div><a href="#">{{ $scream->user_id }}</a></div>
+                            <div><a href="#">{{ $scream->user->name }}</a></div>
                             <div>{{ $scream->scream_text }}<span style="padding-left:5px;font-size:20px;font-weight:bold">!!</span></div>
                             <div style="font-size:10px;text-align:right">{{ $scream->created_at }}</div>
                             <form action="{{ route('screams.favorite') }}" method="POST">
